@@ -4,11 +4,13 @@
 #include "zcl_include.h"
 #include "zcl_multistate_input.h"
 #include "zcl_onoff_configuration.h"
+#include "custom_zcl/zcl_temperature_measurement.h"
 #pragma pack(pop)
 
 #include "telink_size_t_hack.h"
 
 #include "hal/zigbee.h"
+#include "zigbee/consts.h"
 #include "telink_zigbee_hal.h"
 
 // Storage for Telink endpoint configuration
@@ -46,6 +48,9 @@ static cluster_registerFunc_t get_register_func_by_cluster_id(u16 cluster_id) {
   if (cluster_id ==
       ZCL_CLUSTER_GEN_MULTISTATE_INPUT_BASIC) { // Multistate Input
     return zcl_multistate_input_register;
+  }
+  if (cluster_id == ZCL_CLUSTER_TEMPERATURE_MEASUREMENT) {
+    return zcl_temperature_measurement_register;
   }
   return NULL;
 }

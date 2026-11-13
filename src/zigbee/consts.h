@@ -13,6 +13,7 @@
 #define ZCL_CLUSTER_LEVEL_CONTROL                     0x0008
 #define ZCL_CLUSTER_GROUPS                            0x0004
 #define ZCL_CLUSTER_OTA_BOOTLOAD                      0x0019
+#define ZCL_CLUSTER_TEMPERATURE_MEASUREMENT           0x0402
 
 
 // Attributes
@@ -20,6 +21,7 @@
 // Global
 
 #define ZCL_ATTR_GLOBAL_CLUSTER_REVISION                0xFFFD
+#define ZCL_ATTR_TEMPERATURE_MEASURED_VALUE            0x0000
 
 // Basic cluster
 
